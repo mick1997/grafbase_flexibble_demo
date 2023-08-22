@@ -83,14 +83,14 @@ export const getUser = (email: string) => {
   return makeGraphQLRequest(getUserQuery, { email });
 }
 
-export const fetchAllProjects = async (category?: string | null, endcursor?: string | null) => {
+export const fetchAllProjects = async (category?: string | null, endCursor?: string | null) => {
   client.setHeader('x-api-key', apiKey);
 
   const hasCategory = category !== null && category !== undefined;
   const filter = hasCategory ? {category: {eq: category}} : {};
-  // console.log('category', category);
-  // console.log('endcursor', endcursor);
-  return makeGraphQLRequest(projectsQuery, { endcursor, filter });
+  console.log('category', category);
+  console.log('endcursor', endCursor);
+  return makeGraphQLRequest(projectsQuery, { endCursor, filter });
 }
 
 export const getProjectDetails = (id: string) => {

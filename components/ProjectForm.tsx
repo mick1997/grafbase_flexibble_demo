@@ -83,7 +83,6 @@ const ProjectForm = ({ type, session, project }: Props) => {
     }))
   }
 
-  const image = null;
   return (
     <form onSubmit={handleFormSubmit} className="flexStart form">
       <div className="flexStart form_image-container">
